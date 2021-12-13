@@ -1,4 +1,4 @@
-package ar.solPiqueras.disney.characters.entity;
+package ar.solPiqueras.disney.genres.entity;
 
 import java.io.Serializable;
 
@@ -10,33 +10,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-//Clase entidad para mapear los personajes en la bd
-
 @Entity
-@Table(name = "personajes")
-public class Character implements Serializable{
+@Table(name = "generos")
+public class Genre implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long idPersonaje;
+	private long idGenero;
 	
 	@NotEmpty
 	@Column(nullable = false)
-	private String imagenPersonaje;
+	private String imagenGenero;
 	
 	@NotEmpty
 	@Column(nullable = false)
-	private String nombrePersonaje;
-
-	@Column
-	private int edad;
-	
-	@Column
-	private double peso;
-	
-	@NotEmpty
-	@Column(nullable = false)
-	private String historia;
+	private String nombreGenero;
 	
 	private static final long serialVersionUID = 1L;
 }

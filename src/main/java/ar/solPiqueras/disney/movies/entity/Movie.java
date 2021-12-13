@@ -32,7 +32,10 @@ public class Movie implements Serializable {
 	@NotEmpty
 	@Column(nullable = false)
 	private Date fecha;
-	private int calificacion; 
 	
-	
+	@NotEmpty
+	@Column(nullable = false)
+	private int calificacion;
+		
+	private static final long serialVersionUID = 1L;
 }
