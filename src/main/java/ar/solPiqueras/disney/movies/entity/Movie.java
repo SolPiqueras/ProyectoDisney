@@ -2,14 +2,11 @@ package ar.solPiqueras.disney.movies.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+
 
 //Clase entidad para mapear las peliculas en la bd 
 
@@ -36,6 +33,17 @@ public class Movie implements Serializable {
 	@NotEmpty
 	@Column(nullable = false)
 	private int calificacion;
-		
+	
+	@ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+	@JoinTable(
+	        name = "casting",
+	        joinColumns = {@JoinColumn(name = "idPelicula", nullable = false)},
+	        inverseJoinColumns = {@JoinColumn(name="idPersonaje", nullable = false)}
+	    )	
+    private Set<Character> characters;
+	
 	private static final long serialVersionUID = 1L;
 }
