@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 import ar.solPiqueras.disney.characters.entity.Character;
+import ar.solPiqueras.disney.genres.entity.Genre;
 
 //Clase entidad para mapear las peliculas en la bd 
 
@@ -34,6 +35,10 @@ public class Movie implements Serializable {
 	@NotEmpty
 	@Column(nullable = false)
 	private int calificacion;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="idGenero", nullable=false)
+	private Genre genero;
 	
 	@ManyToMany(cascade = {
             CascadeType.PERSIST,
