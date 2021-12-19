@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+import ar.solPiqueras.disney.characters.entity.Character;
 
 //Clase entidad para mapear las peliculas en la bd 
 
@@ -43,7 +44,7 @@ public class Movie implements Serializable {
 	        joinColumns = {@JoinColumn(name = "idPelicula", nullable = false)},
 	        inverseJoinColumns = {@JoinColumn(name="idPersonaje", nullable = false)}
 	    )	
-    private Set<Character> characters;
+    private Set<Character> personajes;
 	
 	private static final long serialVersionUID = 1L;
 }

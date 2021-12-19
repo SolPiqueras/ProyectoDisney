@@ -43,7 +43,7 @@ public class Character implements Serializable{
 	@Column(nullable = false)
 	private String historia;
 	
-	@ManyToMany(mappedBy = "characters")
+	@ManyToMany(mappedBy = "personajes")
     private Set<Movie> peliculas;
 	
 	private static final long serialVersionUID = 1L;
