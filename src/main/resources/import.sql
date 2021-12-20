@@ -1,3 +1,5 @@
+/*Llenar la tabla generos*/
+
 INSERT INTO `disneydb`.`generos` (`imagen_genero`, `nombre_genero`) VALUES ("https://i.imgur.com/QJrcwUM.png", "Fantasía");
 INSERT INTO `disneydb`.`generos` (`imagen_genero`, `nombre_genero`) VALUES ("https://i.imgur.com/KFt3ycw.png", "Animación");
 INSERT INTO `disneydb`.`generos` (`imagen_genero`, `nombre_genero`) VALUES ("https://i.imgur.com/xtQDVD9.png", "Animación 3D");
@@ -5,6 +7,9 @@ INSERT INTO `disneydb`.`generos` (`imagen_genero`, `nombre_genero`) VALUES ("htt
 INSERT INTO `disneydb`.`generos` (`imagen_genero`, `nombre_genero`) VALUES ("https://i.imgur.com/Wlf5xbV.png", "Comedia");
 INSERT INTO `disneydb`.`generos` (`imagen_genero`, `nombre_genero`) VALUES ("https://i.imgur.com/UFm3A49.png", "Ciencia Ficción");
 INSERT INTO `disneydb`.`generos` (`imagen_genero`, `nombre_genero`) VALUES ("https://i.imgur.com/tcbdp0w.png", "Terror");
+
+
+/*Llenar la tabla peliculas*/
 
 INSERT INTO `disneydb`.`peliculas` (`calificacion`, `fecha`, `imagen_pelicula`, `titulo`, `id_genero`) VALUES ( 5, "1991-11-13", "https://i.imgur.com/NLyX1uJ.jpg", "La bella y la bestia", 2);
 INSERT INTO `disneydb`.`peliculas` (`calificacion`, `fecha`, `imagen_pelicula`, `titulo`, `id_genero`) VALUES ( 4, "1989-11-15", "https://i.imgur.com/kd1XtIn.jpg", "La sirenita", 2);
@@ -25,3 +30,8 @@ INSERT INTO `disneydb`.`peliculas` (`calificacion`, `fecha`, `imagen_pelicula`, 
 INSERT INTO `disneydb`.`peliculas` (`calificacion`, `fecha`, `imagen_pelicula`, `titulo`, `id_genero`) VALUES ( 5, "1980-5-21", "https://i.imgur.com/jVPhNDa.jpg", "Star Wars: Episodio V - El imperio contraataca", 6);
 INSERT INTO `disneydb`.`peliculas` (`calificacion`, `fecha`, `imagen_pelicula`, `titulo`, `id_genero`) VALUES ( 3, "1983-5-25", "https://i.imgur.com/AFTSuc1.jpg", "Star Wars: Episodio VI - El regreso del Jedi", 6);
 INSERT INTO `disneydb`.`peliculas` (`calificacion`, `fecha`, `imagen_pelicula`, `titulo`, `id_genero`) VALUES ( 4, "1994-10-27", "https://i.imgur.com/59keuc8.jpg", "El extraño mundo de Jack", 7);
+
+
+/*Llenar la tabla personajes*/
+
+INSERT INTO `disneydb`.`personajes` (`edad`, `historia`, `imagen_personaje`, `nombre_personaje`) VALUES ( 16, "Es valiente, atrevida, aventurera e independiente. Tiene talento con el Arco y flecha también con la espada, y disfruta montando con su caballo Angus por los bosques.", "https://i.imgur.com/PyYffe3.jpg", "Mérida de DunBroch");

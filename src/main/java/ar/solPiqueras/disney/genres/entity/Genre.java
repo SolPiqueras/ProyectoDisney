@@ -34,5 +34,60 @@ public class Genre implements Serializable{
 	@OneToMany(mappedBy = "genero")
 	private Set<Movie> peliculas;
 	
+	
+	//Constructores
+	public Genre() {
+		super();
+	}
+
+	public Genre(long idGenero, @NotEmpty String imagenGenero, @NotEmpty String nombreGenero, Set<Movie> peliculas) {
+		super();
+		this.idGenero = idGenero;
+		this.imagenGenero = imagenGenero;
+		this.nombreGenero = nombreGenero;
+		this.peliculas = peliculas;
+	}
+
+	//Getters y Setters
+	public long getIdGenero() {
+		return idGenero;
+	}
+
+	public void setIdGenero(long idGenero) {
+		this.idGenero = idGenero;
+	}
+
+	public String getImagenGenero() {
+		return imagenGenero;
+	}
+
+	public void setImagenGenero(String imagenGenero) {
+		this.imagenGenero = imagenGenero;
+	}
+
+	public String getNombreGenero() {
+		return nombreGenero;
+	}
+
+	public void setNombreGenero(String nombreGenero) {
+		this.nombreGenero = nombreGenero;
+	}
+
+	public Set<Movie> getPeliculas() {
+		return peliculas;
+	}
+
+	public void setPeliculas(Set<Movie> peliculas) {
+		this.peliculas = peliculas;
+	}
+	
+	//ToString 
+	@Override
+	public String toString() {
+		return "Genre [idGenero=" + idGenero + ", imagenGenero=" + imagenGenero + ", nombreGenero=" + nombreGenero
+				+ ", peliculas=" + peliculas + "]";
+	}
+
 	private static final long serialVersionUID = 1L;
+
 }
