@@ -17,9 +17,9 @@ import ar.solPiqueras.disney.genres.services.IGenreService;
 //Clase controlador del CRUD de géneros
 
 //Permite recibir las peticiones (request) del front
-//@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 @RestController
-@RequestMapping("/Disney")
+@RequestMapping("/disney")
 public class GenreController {
 	
 	@Autowired

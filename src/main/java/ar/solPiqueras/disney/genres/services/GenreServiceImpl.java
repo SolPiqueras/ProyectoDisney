@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ar.solPiqueras.disney.genres.dao.IGenreDao;
 import ar.solPiqueras.disney.genres.entity.Genre;
 
-//Clase servicio que implementa todos los métodos necesarios del CRUD de génerod
+//Clase servicio que implementa todos los métodos necesarios del CRUD de géneros
 @Service
 public class GenreServiceImpl implements IGenreService {
 
