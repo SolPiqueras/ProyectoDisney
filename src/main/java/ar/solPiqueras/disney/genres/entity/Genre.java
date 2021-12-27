@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import ar.solPiqueras.disney.movies.entity.Movie;
 
 @Entity
@@ -31,6 +33,7 @@ public class Genre implements Serializable{
 	private String nombreGenero;
 	
 	@OneToMany(mappedBy = "genero")
+	@JsonBackReference
 	private Set<Movie> peliculas;
 	
 	

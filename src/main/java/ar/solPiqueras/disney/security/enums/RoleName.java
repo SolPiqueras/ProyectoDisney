@@ -1,5 +1,5 @@
 package ar.solPiqueras.disney.security.enums;
 
-public class ProfileName {
-
+public enum RoleName {
+	ROLE_ADMIN, ROLE_USER
 }

@@ -94,3 +94,22 @@ INSERT INTO `disneydb`.`casting` (`id_pelicula`, `id_personaje`) VALUES (18, 18)
 INSERT INTO `disneydb`.`casting` (`id_pelicula`, `id_personaje`) VALUES (18, 19);
 INSERT INTO `disneydb`.`casting` (`id_pelicula`, `id_personaje`) VALUES (18, 20);
 INSERT INTO `disneydb`.`casting` (`id_pelicula`, `id_personaje`) VALUES (18, 21);
+
+
+/*Llenar la tabla roles*/
+
+INSERT INTO `disneydb`.`roles` (`rol_nombre`) VALUES ("ROLE_ADMIN");
+INSERT INTO `disneydb`.`roles` (`rol_nombre`) VALUES ("ROLE_USER");
+
+
+/*Llenar la tabla usuarios con dos usuarios del sistema*/
+/* Contraseña cifrada para los usuarios del sistema: admin password = admin, user password = user */
+
+INSERT INTO `disneydb`.`usuarios` (`email`, `nombre`, `nombre_usuario`, `password`) VALUES ("admin@mail.com", "Administrador", "admin", '$2a$10$ryRg.Hk4H.j4qCDz8QFlwuS5gXTqf6lP3KZ/MmBoIFgeeDp0RvUxW');
+INSERT INTO `disneydb`.`usuarios` (`email`, `nombre`, `nombre_usuario`, `password`) VALUES ("user@mail.com", "Usuario", "user", '$2a$10$kA3OfMtGNx6.w9ZUo8zI2OiKgSKwzuRGCZap7gHro2kv/X/bL9sy.');
+
+
+/*Llenar la tabla usuario_rol*/
+INSERT INTO `disneydb`.`usuario_rol` (`id_usuario`, `id_rol`) VALUES (1, 1);
+INSERT INTO `disneydb`.`usuario_rol` (`id_usuario`, `id_rol`) VALUES (1, 2);
+INSERT INTO `disneydb`.`usuario_rol` (`id_usuario`, `id_rol`) VALUES (2, 2);
