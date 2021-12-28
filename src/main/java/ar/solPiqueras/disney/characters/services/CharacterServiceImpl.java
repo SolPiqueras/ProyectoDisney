@@ -48,4 +48,22 @@ public class CharacterServiceImpl implements ICharacterService {
 		personajeDao.deleteById(idPersonaje);
 	}
 
+	@Override
+	public List<Character> findByNombrePersonajeStartsWith(String nombrePersonaje) {
+		
+		return personajeDao.findByNombrePersonajeStartsWith(nombrePersonaje);
+	}
+
+	@Override
+	public List<Character> findByEdad(Integer edad) {
+		
+		return findByEdad(edad);
+	}
+
+	@Override
+	public List<Character> findByPeliculas(long idPelicula) {
+		
+		return findByPeliculas(idPelicula);
+	}
+
 }

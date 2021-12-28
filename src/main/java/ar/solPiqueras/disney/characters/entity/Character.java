@@ -124,9 +124,7 @@ public class Character implements Serializable{
 	//To String
 	@Override
 	public String toString() {
-		return "Character [idPersonaje=" + idPersonaje + ", imagenPersonaje=" + imagenPersonaje + ", nombrePersonaje="
-				+ nombrePersonaje + ", edad=" + edad + ", peso=" + peso + ", historia=" + historia + ", peliculas="
-				+ peliculas + "]";
+		return nombrePersonaje + " - " + imagenPersonaje;
 	}
 
 	private static final long serialVersionUID = 1L;

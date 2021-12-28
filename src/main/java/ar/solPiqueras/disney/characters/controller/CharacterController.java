@@ -2,6 +2,7 @@ package ar.solPiqueras.disney.characters.controller;
 
 import ar.solPiqueras.disney.characters.entity.Character;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,15 +40,42 @@ public class CharacterController {
 	private ICharacterService personajeService;
 
 	@PreAuthorize("hasRole('USER')")
-	@GetMapping("/characters")
-	public List<Character> index() {
+	@GetMapping(value = { "/characters", "/characters{param}" })
+	public List<String> index(@PathVariable(value = "param", required = false) String param) {
 
-		return personajeService.findAll();
+		List<String> listaPersonajes = new ArrayList<String>();
+		ArrayList<Character> personajes = new ArrayList<Character>();
+
+		if (param != null) {
+
+			switch (param) {
+				case "name":
+					personajes = (ArrayList<Character>) personajeService.findByNombrePersonajeStartsWith(param);
+					break;
+				case "age":
+					personajes = (ArrayList<Character>) personajeService.findByEdad(Integer.parseInt(param));
+					break;
+				case "movies":
+					personajes = (ArrayList<Character>) personajeService.findByPeliculas(Long.parseLong(param));
+					break;
+			}
+
+		} else {
+
+			personajes = (ArrayList<Character>) personajeService.findAll();
+
+		}
+		
+		for (Character personaje : personajes) {
+			listaPersonajes.add(personaje.toString());
+		}
+
+		return listaPersonajes;
 	}
 
 	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/characters/{id}")
-	public ResponseEntity<?> show(@PathVariable Long id) {
+	public ResponseEntity<Character> show(@PathVariable Long id) {
 
 		Character personaje = personajeService.findById(id);
 
