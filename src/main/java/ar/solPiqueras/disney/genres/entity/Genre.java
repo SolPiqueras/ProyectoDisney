@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import ar.solPiqueras.disney.movies.entity.Movie;
 
@@ -33,7 +34,7 @@ public class Genre implements Serializable{
 	private String nombreGenero;
 	
 	@OneToMany(mappedBy = "genero")
-	@JsonBackReference
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Set<Movie> peliculas;
 	
 	

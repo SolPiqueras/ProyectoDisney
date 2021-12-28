@@ -7,6 +7,8 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import ar.solPiqueras.disney.characters.entity.Character;
 import ar.solPiqueras.disney.genres.entity.Genre;
 
@@ -43,12 +45,13 @@ public class Movie implements Serializable {
 	@ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
-    })
+    }, fetch = FetchType.LAZY)
 	@JoinTable(
 	        name = "casting",
 	        joinColumns = {@JoinColumn(name = "idPelicula", nullable = false)},
 	        inverseJoinColumns = {@JoinColumn(name="idPersonaje", nullable = false)}
-	    )	
+	    )
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Set<Character> personajes;
 	
 	

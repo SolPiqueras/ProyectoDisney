@@ -8,5 +8,5 @@ public interface ICharacterService {
 	public List<Character> findAll(); 
 	public Character findById(long idPersonaje);
 	public Character save(Character personaje);
-	public void delete(long idPersonaje);
+	public void deleteById(long idPersonaje);
 }

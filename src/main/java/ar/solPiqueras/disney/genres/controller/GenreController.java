@@ -17,7 +17,7 @@ import ar.solPiqueras.disney.genres.services.IGenreService;
 //Clase controlador del CRUD de géneros
 
 //Permite recibir las peticiones (request) del front
-@CrossOrigin(origins = {"*"})
+@CrossOrigin
 @RestController
 @RequestMapping("/disney")
 public class GenreController {
@@ -32,7 +32,7 @@ public class GenreController {
 		return genreService.findAll();
 	}
 	
-	//Metodo para mostar un perfil 
+	//Metodo para mostar un género 
 	@GetMapping("/generos/{id}")
 	public ResponseEntity<?> show(@PathVariable long id){
 		Genre genero = genreService.findById(id);

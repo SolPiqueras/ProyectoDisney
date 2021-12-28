@@ -43,7 +43,7 @@ public class CharacterServiceImpl implements ICharacterService {
 	// Método que elimina un personaje con un determinado ID de la base de datos
 	@Override
 	@Transactional
-	public void delete(long idPersonaje) {
+	public void deleteById(long idPersonaje) {
 		
 		personajeDao.deleteById(idPersonaje);
 	}

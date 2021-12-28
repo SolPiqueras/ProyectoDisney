@@ -12,6 +12,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import ar.solPiqueras.disney.movies.entity.Movie;
 
 
@@ -34,16 +37,17 @@ public class Character implements Serializable{
 	private String nombrePersonaje;
 
 	@Column
-	private int edad;
+	private Integer edad;
 	
 	@Column
-	private double peso;
+	private Double peso;
 	
 	@NotEmpty
 	@Column(nullable = false)
 	private String historia;
 	
 	@ManyToMany(mappedBy = "personajes")
+	//@JsonBackReference
     private Set<Movie> peliculas;
 	
 	//Constructores
@@ -51,8 +55,8 @@ public class Character implements Serializable{
 		super();
 	}
 
-	public Character(long idPersonaje, @NotEmpty String imagenPersonaje, @NotEmpty String nombrePersonaje, int edad,
-			double peso, @NotEmpty String historia, Set<Movie> peliculas) {
+	public Character(long idPersonaje, @NotEmpty String imagenPersonaje, @NotEmpty String nombrePersonaje, Integer edad,
+			Double peso, @NotEmpty String historia, Set<Movie> peliculas) {
 		super();
 		this.idPersonaje = idPersonaje;
 		this.imagenPersonaje = imagenPersonaje;
@@ -88,19 +92,19 @@ public class Character implements Serializable{
 		this.nombrePersonaje = nombrePersonaje;
 	}
 
-	public int getEdad() {
+	public Integer getEdad() {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
+	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
 
-	public double getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(double peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 

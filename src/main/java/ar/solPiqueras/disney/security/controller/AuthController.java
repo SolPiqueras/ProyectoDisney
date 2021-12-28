@@ -52,7 +52,7 @@ public class AuthController {
 	@Autowired
 	JwtProvider jwtProvider;
 	
-	@PostMapping("/registro")
+	@PostMapping("/register")
 	public ResponseEntity<?> registro(@Valid @RequestBody SignIn nuevoUsuario, BindingResult bindingResult) {
 		
 		if(bindingResult.hasErrors()) {
